@@ -1,5 +1,13 @@
 # jekyll-cleaner-urls
 
+#### Before
+
+http://example.com/category%20name/hello%20world.html
+
+#### After
+
+http://example.com/category-name/hello-world/
+
 Jekyll plugin: cleans the generated URLs up a little by replacing spaces with dashes -  so %20 will become - in both categories and posts
 
 ## Installation
