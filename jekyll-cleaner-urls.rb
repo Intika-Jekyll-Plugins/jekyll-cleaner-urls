@@ -7,14 +7,8 @@ module Jekyll
   class Post
 
     #https://github.com/jekyll/jekyll/blob/master/lib/jekyll/post.rb
-    def url
-
-         @url ||= URL.new({
-           :template => template,
-           :placeholders => url_placeholders,
-           :permalink => permalink
-         }).to_s.gsub("%20","-").gsub(" ","-").gsub(".html","")
-
+    def id
+      File.join(dir, slug).gsub(" ","-").gsub("%20","-").gsub("--","-")
     end
 
   end
@@ -23,8 +17,7 @@ module Jekyll
   class URL
 
     def self.escape_path(path)
-      URI.escape(path, /[^a-zA-Z\d\-._~!$&'()*+,;=:@\/]/).encode('utf-8')
-      URI.gsub("%20","-").gsub(" ","-")
+      URI.escape(path, /[^a-zA-Z\d\-._~!$&'()*+,;=:@\/]/).encode('utf-8').gsub("%20","-").gsub(" ","-").gsub("--","-")
 end
 
   end
