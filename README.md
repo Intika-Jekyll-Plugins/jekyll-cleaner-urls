@@ -1,5 +1,7 @@
 # jekyll-cleaner-urls
 
+This is still in the construction stage.. posts work but categories do not
+
 #### Before
 
 http://example.com/category%20name/hello%20world.html
